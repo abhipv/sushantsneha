@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sushant ♥ Snehapallavi</title>
+    <%= favicon_link_tag %>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="landing">
+    <div id="page-wrapper">
+      <header id="header" class="alt">
+        <h1><a href="index.html">Sushant ♥ Snehapallavi</a></h1>
+        <nav id="nav">
+          <ul>
+            <li class="special">
+              <a href="#menu" class="menuToggle"><span>Menu</span></a>
+              <div id="menu">
+                <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="#one">The Wedding</a></li>
+                  <li><a href="#two">Events</a></li>
+                  <li><a href="#cta">Our Story</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <section id="banner">
+        <div class="inner">
+          <h2>Snehpallavi and Sushant</h2>
+          <p>Are getting hitched!</p>
+<!--           <ul class="actions">
+            <li><a href="#" class="button special">RSVP Now</a></li>
+          </ul> -->
+        </div>
+        <a href="#one" class="more scrolly">Keep Scrolling</a>
+      </section>
+
+      <section id="one" class="wrapper style1 special">
+            <div class="inner">
+              <header class="major">
+                <h2>The Wedding</h2>
+                <p>There is no more lovely, friendly, and charming relationship, communion or company than a good marriage.</p>
+              </header>
+              <div id="DateCountdown" data-date="2016-11-21 14:00:00" style="width: 100%;"></div>
+            </div>
+      </section>
+
+      <section id="three" class="wrapper style3 special">
+            <div class="inner">
+              <header class="major">
+                <h2>Details</h2>
+                <p>Every heart sings a song, incomplete, until another heart whispers back. Those who wish to sing always find a song. <br/> At the touch of a lover, everyone becomes a poet.</p>
+              </header>
+              <ul class="features">
+                <li class="icon fa-paper-plane-o">
+                  <h3>Ceremony</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-laptop">
+                  <h3>Reception</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+              </ul>
+            </div>
+      </section>
+
+      <section id="two" class="wrapper alt style2">
+            <section class="spotlight">
+              <div class="image"><img src="../assets/preview/wedding.jpg" alt="" /></div><div class="content">
+                <h2>Marriage<br />
+                06 November, 2016</h2>
+                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+              </div>
+            </section>
+            <section class="spotlight">
+              <div class="image"><img src="../assets/preview/haldi.jpg" alt="" /></div><div class="content">
+                <h2>Haldi<br />
+                02 November, 2016</h2>
+                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+              </div>
+            </section>
+            <section class="spotlight">
+              <div class="image"><img src="../assets/preview/engagement.jpg" alt="" /></div><div class="content">
+                <h2>Engagement<br />
+                16 May, 2016</h2>
+                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+              </div>
+            </section>
+      </section>
+
+      <section id="one-one" class="wrapper style1 special">
+        <div class="inner">
+          <header class="major">
+                <h2>InstaGallery</h2>
+                <p>There is no more lovely, friendly, and charming relationship, communion or company than a good marriage.</p>
+              </header>
+          <div class='box alt'>
+            <div id="instafeed" class="row uniform 50%">
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+        <!-- CTA -->
+          <section id="cta" class="wrapper style4">
+            <div class="inner">
+              <div class='audio_player'>
+                <audio src="<%= audio_path 'everything.mp3'%>" autoplay loop />
+              </div>
+              <header>
+                <h2>Our Story</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat tempus ligula, sed ultrices purus gravida sed. Maecenas nunc augue, pretium at scelerisque eget, pulvinar at ipsum. Pellentesque finibus ornare neque eget mollis. Praesent a purus vitae elit suscipit ultrices.</p>
+
+<p>Vestibulum ut lacus at magna ultricies condimentum. Ut egestas mauris elit, sed viverra diam dictum at. Cras rutrum diam eget bibendum congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+              </header>
+              <ul class="actions vertical">
+                <li><a href="#" class="button fit">Read More</a></li>
+              </ul>
+            </div>
+          </section>
+      <%= yield %>
+      <footer id="footer">
+        <ul class="copyright">
+          <li><a href="http://www.abhijitsinha.me" target="_blank">Positive Vibes</a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
