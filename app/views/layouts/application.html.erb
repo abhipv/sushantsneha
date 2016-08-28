@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sushant ♥ Snehapallavi</title>
+    <title>Sushant ♥ Snehpallavi</title>
     <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
 
@@ -12,7 +12,7 @@
   <body class="landing">
     <div id="page-wrapper">
       <header id="header" class="alt">
-        <h1><a href="index.html">Sushant ♥ Snehapallavi</a></h1>
+        <h1><a href="index.html">Sushant <span class="icon fa-heart-o"></span> Snehpallavi</a></h1>
         <nav id="nav">
           <ul>
             <li class="special">
@@ -31,13 +31,12 @@
       </header>
       <section id="banner">
         <div class="inner">
-          <h2>Snehpallavi and Sushant</h2>
+          <h2>Snehpallavi & Sushant</h2>
           <p>Are getting hitched!</p>
-<!--           <ul class="actions">
-            <li><a href="#" class="button special">RSVP Now</a></li>
-          </ul> -->
+          <br/><br/>
+          <%= render 'layouts/ribbon' %>
         </div>
-        <a href="#one" class="more scrolly">Keep Scrolling</a>
+        <a href="#one" class="more scrolly"></a>
       </section>
 
       <section id="one" class="wrapper style1 special">
@@ -57,13 +56,21 @@
                 <p>Every heart sings a song, incomplete, until another heart whispers back. Those who wish to sing always find a song. <br/> At the touch of a lover, everyone becomes a poet.</p>
               </header>
               <ul class="features">
-                <li class="icon fa-paper-plane-o">
-                  <h3>Ceremony</h3>
+                <li class="icon fa-gittip">
+                  <h3>Wedding Ceremony</h3>
                   <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+
+                  <p><span class="icon fa-calendar"></span>&nbsp;&nbsp;&nbsp;21st November, 2016</p>
+                  <p><span class="icon fa-clock-o"></span>&nbsp;&nbsp;&nbsp;10AM - 2PM</p>
+                  <p><span class="icon fa-map-o"></span>&nbsp;&nbsp;&nbsp;Shivaji Park, Dadar</p>
+
                 </li>
-                <li class="icon fa-laptop">
+                <li class="icon fa-gittip">
                   <h3>Reception</h3>
                   <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                  <p><span class="icon fa-calendar"></span>&nbsp;&nbsp;&nbsp;21st November, 2016</p>
+                  <p><span class="icon fa-clock-o"></span>&nbsp;&nbsp;&nbsp;2PM - 4PM</p>
+                  <p><span class="icon fa-map-o"></span>&nbsp;&nbsp;&nbsp;Shivaji Park, Dadar</p>
                 </li>
               </ul>
             </div>
@@ -73,22 +80,32 @@
             <section class="spotlight">
               <div class="image"><img src="<%= path_to_asset 'preview/wedding.jpg'%>" alt="" /></div><div class="content">
                 <h2>Marriage<br />
-                21 November, 2016</h2>
-                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+                21st November, 2016</h2>
+                <p>
+                  <ul class="actions">
+                    <li><a href="#" class="button small">Album - Coming Soon</a></li>
+                  </ul>
+                </p>
               </div>
             </section>
             <section class="spotlight">
               <div class="image"><img src="<%= path_to_asset 'preview/haldi.jpg'%>" alt="" /></div><div class="content">
                 <h2>Haldi<br />
-                19 November, 2016</h2>
-                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+                19th November, 2016</h2>
+                <p><ul class="actions">
+                    <li><a href="#" class="button small">Album - Coming Soon</a></li>
+                  </ul></p>
               </div>
             </section>
             <section class="spotlight">
               <div class="image"><img src="<%= path_to_asset 'preview/engagement.jpg'%>" alt="" /></div><div class="content">
                 <h2>Engagement<br />
-                16 May, 2016</h2>
-                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+                14th February, 2016</h2>
+                <p>
+                  <ul class="actions">
+                    <li><a href="#" class="button small">Album - Coming Soon</a></li>
+                  </ul>
+                </p>
               </div>
             </section>
       </section>
@@ -112,7 +129,7 @@
           <section id="cta" class="wrapper style4">
             <div class="inner">
               <div class='audio_player'>
-                <audio src="<%= audio_path 'everything.mp3'%>" autoplay loop />
+                <audio src="<%= audio_path 'everything.mp3'%>" loop />
               </div>
               <header>
                 <h2>Our Story</h2>

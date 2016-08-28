@@ -131,9 +131,9 @@ $(document).ready(function(){
 
   var feed = new Instafeed({
 	  get: 'user',
-	  userId: '34227970',
+	  userId: '3737516290',
 	  resolution: 'low_resolution',
-	  accessToken: '34227970.1677ed0.b94b5173006244b98e7ce65949d1ad85',
+	  accessToken: '3737516290.1677ed0.3ddf1ceed85645eda5bb30e6e5b000d6',
 	  template: '<div class="4u"><span class="image fit"><a href="{{link}}" target="_blank"><img src="{{image}}" /></a></span></div>'
   });
 
@@ -141,5 +141,8 @@ $(document).ready(function(){
 
   audiojs.events.ready(function() {
     var as = audiojs.createAll();
+    $('.play-pause .play').click();
   });
+
+  setTimeout(function(){ $('.ribbon_container').removeClass('hidden_with_space') }, 4000);
 })
