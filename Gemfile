@@ -4,6 +4,7 @@ ruby '2.3.1'
 
 gem 'audiojs-rails'
 gem 'coffee-rails', '~> 4.2'
+gem 'font-awesome-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'pg'
