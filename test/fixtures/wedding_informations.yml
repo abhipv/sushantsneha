@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  groom: MyString
+  bride: MyString
+  wedding_countdown_quote: MyString
+  wedding_details_quote: MyString
+  instagallery_quote: MyString
+  our_story: MyText
+
+two:
+  groom: MyString
+  bride: MyString
+  wedding_countdown_quote: MyString
+  wedding_details_quote: MyString
+  instagallery_quote: MyString
+  our_story: MyText

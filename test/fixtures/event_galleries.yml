@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  event_date: 2016-10-01
+  active: false
+  sort_order: 1
+
+two:
+  name: MyString
+  event_date: 2016-10-01
+  active: false
+  sort_order: 1

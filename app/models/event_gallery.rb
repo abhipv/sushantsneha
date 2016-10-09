@@ -1,0 +1,2 @@
+class EventGallery < ApplicationRecord
+end

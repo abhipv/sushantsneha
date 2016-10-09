@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sushant ♥ Snehpallavi</title>
+    <title><%= @groom %> ♥ <%= @bride %></title>
     <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
 
@@ -12,7 +12,7 @@
   <body class="landing">
     <div id="page-wrapper">
       <header id="header" class="alt">
-        <h1><a href="index.html">Sushant <span class="icon fa-heart-o"></span> Snehpallavi</a></h1>
+        <h1><a href="index.html"><%= @groom %> <span class="icon fa-heart-o"></span> <%= @bride %></a></h1>
         <nav id="nav">
           <ul>
             <li class="special">
@@ -31,7 +31,7 @@
       </header>
       <section id="banner">
         <div class="inner">
-          <h2>Snehpallavi & Sushant</h2>
+          <h2><%= @bride %> & <%= @groom %></h2>
           <p>Are getting hitched!</p>
           <br/><br/>
           <%= render 'layouts/ribbon' %>
@@ -43,7 +43,7 @@
             <div class="inner">
               <header class="major">
                 <h2>The Wedding</h2>
-                <p>There is no more lovely, friendly, and charming relationship, communion or company than a good marriage.</p>
+                <p><%= @wedding_info.wedding_countdown_quote %></p>
               </header>
               <div id="DateCountdown" data-date="2016-11-21 14:00:00" style="width: 100%;"></div>
             </div>
@@ -53,72 +53,68 @@
             <div class="inner">
               <header class="major">
                 <h2>Details</h2>
-                <p>Every heart sings a song, incomplete, until another heart whispers back. Those who wish to sing always find a song. <br/> At the touch of a lover, everyone becomes a poet.</p>
+                <p><%= @wedding_info.wedding_details_quote %></p>
               </header>
               <ul class="features">
                 <li class="icon fa-gittip">
+                  <% wedding_ceremony = @ceremonies.where(name: 'Wedding').first %>
                   <h3>Wedding Ceremony</h3>
-                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                  <p><%= wedding_ceremony.message %></p>
 
-                  <p><span class="icon fa-calendar"></span>&nbsp;&nbsp;&nbsp;21st November, 2016</p>
-                  <p><span class="icon fa-clock-o"></span>&nbsp;&nbsp;&nbsp;10AM - 2PM</p>
-                  <p><span class="icon fa-map-o"></span>&nbsp;&nbsp;&nbsp;Shivaji Park, Dadar</p>
+                  <p><span class="icon fa-calendar"></span>&nbsp;&nbsp;&nbsp;
+                  <%= wedding_ceremony.ceremony_date.stamp('21st November, 2016') %></p>
+                  <p><span class="icon fa-clock-o"></span>&nbsp;&nbsp;&nbsp;
+                  <%= wedding_ceremony.ceremony_time %></p>
+                  <p><span class="icon fa-map-o"></span>&nbsp;&nbsp;&nbsp;
+                  <%= wedding_ceremony.ceremony_location %></p>
 
                 </li>
                 <li class="icon fa-gittip">
+                  <% reception_ceremony = @ceremonies.where(name: 'Reception').first %>
                   <h3>Reception</h3>
-                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-                  <p><span class="icon fa-calendar"></span>&nbsp;&nbsp;&nbsp;21st November, 2016</p>
-                  <p><span class="icon fa-clock-o"></span>&nbsp;&nbsp;&nbsp;2PM - 4PM</p>
-                  <p><span class="icon fa-map-o"></span>&nbsp;&nbsp;&nbsp;Shivaji Park, Dadar</p>
+                  <p><%= wedding_ceremony.message %></p>
+                  <p><span class="icon fa-calendar"></span>&nbsp;&nbsp;&nbsp;
+                  <%= reception_ceremony.ceremony_date.stamp('21st November, 2016') %></p>
+                  <p><span class="icon fa-clock-o"></span>&nbsp;&nbsp;&nbsp;
+                  <%= reception_ceremony.ceremony_time %></p>
+                  <p><span class="icon fa-map-o"></span>&nbsp;&nbsp;&nbsp;
+                  <%= reception_ceremony.ceremony_location %></p>
                 </li>
               </ul>
             </div>
       </section>
 
       <section id="two" class="wrapper alt style2">
-            <section class="spotlight">
-              <div class="image"><img src="<%= path_to_asset 'preview/wedding.png'%>" alt="" /></div><div class="content">
-                <h2>Marriage<br />
-                21st November, 2016</h2>
-                <p>
-                  <ul class="actions">
-                    <li><a href="#" class="button small">Album - Coming Soon</a></li>
-                  </ul>
-                </p>
-              </div>
-            </section>
-            <section class="spotlight">
-              <div class="image"><img src="<%= path_to_asset 'preview/haldi.jpg'%>" alt="" /></div><div class="content">
-                <h2>Haldi<br />
-                19th November, 2016</h2>
-                <p><ul class="actions">
-                    <li><a href="#" class="button small">Album - Coming Soon</a></li>
-                  </ul></p>
-              </div>
-            </section>
-            <section class="spotlight">
-              <div class="image"><img src="<%= path_to_asset 'preview/engagement.jpg'%>" alt="" /></div><div class="content">
-                <h2>Engagement<br />
-                14th February, 2016</h2>
-                <p>
-                  <ul class="actions">
-                    <li><a href="#" class="button small">Album - Coming Soon</a></li>
-                  </ul>
-                </p>
-              </div>
-            </section>
+        <% @event_galleries.each do |event_gallery| %>
+          <section class="spotlight">
+            <div class="image">
+              <img src="<%= image_path_custom(event_gallery.name.downcase) %>" alt="" />
+            </div>
+            <div class="content">
+              <h2><%= event_gallery.name %><br />
+              <%= event_gallery.event_date.stamp("21st November, 2016") %></h2>
+              <p>
+                <ul class="actions">
+                  <% if event_gallery.active %>
+                    <li><a href="#" class="button small"></a></li>
+                  <% else %>
+                    <li><span class="button small">Album - Coming Soon</span></li>
+                  <% end %>
+                </ul>
+              </p>
+            </div>
+          </section>
+        <% end %>
       </section>
 
       <section id="one-one" class="wrapper style1 special">
         <div class="inner">
           <header class="major">
                 <h2>InstaGallery</h2>
-                <p>There is no more lovely, friendly, and charming relationship, communion or company than a good marriage.</p>
+                <p><%= @wedding_info.instagallery_quote %></p>
               </header>
           <div class='box alt'>
             <div id="instafeed" class="row uniform 50%">
-
             </div>
           </div>
         </div>
@@ -133,13 +129,8 @@
               </div>
               <header>
                 <h2>Our Story</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat tempus ligula, sed ultrices purus gravida sed. Maecenas nunc augue, pretium at scelerisque eget, pulvinar at ipsum. Pellentesque finibus ornare neque eget mollis. Praesent a purus vitae elit suscipit ultrices.</p>
-
-<p>Vestibulum ut lacus at magna ultricies condimentum. Ut egestas mauris elit, sed viverra diam dictum at. Cras rutrum diam eget bibendum congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                <p><%= raw @wedding_info.our_story %></p>
               </header>
-              <ul class="actions vertical">
-                <li><a href="#" class="button fit">Read More</a></li>
-              </ul>
             </div>
           </section>
       <%= yield %>

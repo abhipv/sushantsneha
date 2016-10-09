@@ -144,5 +144,7 @@ $(document).ready(function(){
     $('.play-pause .play').click();
   });
 
-  setTimeout(function(){ $('.ribbon_container').removeClass('hidden_with_space') }, 4000);
+  setTimeout(function(){ $('.play-pause .loading').click(); $('.play-pause .play').click(); }, 2000);
+
+  setTimeout(function(){ $('.ribbon_container').removeClass('hidden_with_space') }, 5000);
 })

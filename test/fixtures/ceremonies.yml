@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  message: MyText
+  ceremony_date: 2016-10-01
+  ceremony_time: MyString
+  ceremony_location: MyString
+  map_url: MyText
+
+two:
+  name: MyString
+  message: MyText
+  ceremony_date: 2016-10-01
+  ceremony_time: MyString
+  ceremony_location: MyString
+  map_url: MyText
