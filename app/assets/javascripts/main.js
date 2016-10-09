@@ -142,7 +142,9 @@ $(document).ready(function(){
   audiojs.events.ready(function() {
     var as = audiojs.createAll();
     setTimeout(function(){ $('.play-pause .loading').click(); $('.play-pause .play').click(); $('.play-pause .play').click(); }, 2000);
+    setTimeout(function(){ $('.play-pause .loading').vclick(); $('.play-pause .play').vclick(); $('.play-pause .play').vclick(); }, 2000);
   });
+
 
   setTimeout(function(){ $('.ribbon_container').removeClass('hidden_with_space') }, 5000);
 })
