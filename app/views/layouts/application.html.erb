@@ -10,6 +10,8 @@
   </head>
 
   <body class="landing">
+    <% number_of_days_of_marriage = (Date.today - Date.parse('2016-11-21')).to_i %>
+    <% number_of_years_of_marriage = number_of_days_of_marriage / 365 %>
     <div id="page-wrapper">
       <header id="header" class="alt">
         <h1><a href="index.html"><%= @groom %> <span class="icon fa-heart-o"></span> <%= @bride %></a></h1>
@@ -32,7 +34,14 @@
       <section id="banner">
         <div class="inner">
           <h2><%= @bride %> & <%= @groom %></h2>
-          <p>Are getting hitched!</p>
+          <% if number_of_years_of_marriage == 0 %>
+            <p>Are getting hitched!</p>
+          <% else %>
+            <p>
+              <%= number_of_years_of_marriage.humanize.titleize %>
+              year of marriage
+            </p>
+          <% end %>
           <br/><br/>
           <%= render 'layouts/ribbon' %>
         </div>
@@ -42,7 +51,14 @@
       <section id="one" class="wrapper style1 special">
             <div class="inner">
               <header class="major">
-                <h2>The Wedding</h2>
+                <% if number_of_years_of_marriage == 0 %>
+                  <h2>The Wedding</h2>
+                <% else %>
+                  <h2>
+                    <%= @years[number_of_years_of_marriage] %>
+                    Anniversary
+                  </h2>
+                <% end %>
                 <p><%= @wedding_info.wedding_countdown_quote %></p>
               </header>
               <div id="DateCountdown" data-date="2016-11-21 14:00:00" style="width: 100%;"></div>

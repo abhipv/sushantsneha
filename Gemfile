@@ -9,6 +9,7 @@ gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
 gem 'font-awesome-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
+gem 'humanize'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'pg'
 gem 'puma'
@@ -30,4 +31,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen'
 end
-
