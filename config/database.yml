@@ -2,12 +2,12 @@ development:
   adapter: postgresql
   database: personal_ss_dev
   host: localhost
-  username: abhijitsinha
+  username: kiprosh-gamma
   password:
 
 test:
   adapter: postgresql
   database: personal_ss_test
   host: localhost
-  username: abhijitsinha
+  username: kiprosh-gamma
   password:

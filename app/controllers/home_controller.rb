@@ -6,5 +6,7 @@ class HomeController < ApplicationController
 
     @groom = @wedding_info.groom
     @bride = @wedding_info.bride
+
+    @years = %w(First Second Third Fourth Fifth Sixth Seventh Eight Ninth Tenth)
   end
 end
